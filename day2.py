@@ -1,10 +1,15 @@
-w = input("What is your weight in kilogram?")
-h = input("What is your height in Meter")
-
-w_float = float(w)
-h_float = float(h)
-
-bmi = w_float / (h_float**2)
-result = str(bmi)
-
-print("Your BMI is " + result )
+print(8/3)
+print(int(8/3))
+print(round(8/3))
+print(round(8/3,2))
+print(round (8/3,3))
+print(round(2.66666666,4))
+print(8 // 3)
+result = 8 / 2
+result /= 2
+print(result)
+# f-String
+score = 0
+height = 1.8
+isWinning = True
+print(f"Your score is {score}, your height is {height}, you are winning is {isWinning}")
