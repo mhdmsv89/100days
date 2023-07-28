@@ -1,6 +1,8 @@
-num_char = len(input("What is your name?"))
+a = input("Insert a two digit number!")
 
-num_char_str = str(num_char)
+b = int(a[0])
 
-print("Your name has " + num_char_str + " characters.")
+c = int(a[1])
+
+print(b+c)
 
