@@ -7,9 +7,12 @@ if h >= 120:
     if age < 12:
         bill = 5
         print("Your ticket cost 5$")
-    elif 12 <= age <= 18:
+    elif age < 18:
         bill = 7
         print("Your ticket cost 7$")
+    elif 45 <= age <= 55:
+        bill = 0
+        print("your ticket is free")
     else:
         bill = 12
         print("Your ticket cost 12$")
