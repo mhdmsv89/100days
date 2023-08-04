@@ -8,7 +8,7 @@ word_length = len(chosen_word)
 end_of_game = False
 lives = 6
 display = []
-for _ in range (word_length)
+for _ in range (word_length):
     display += "_"
 print(f"{''.join(display)}")
 while not end_of_game:
