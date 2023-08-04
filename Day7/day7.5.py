@@ -68,7 +68,9 @@ print(f"{''.join(display)}")
 
 end_of_game = False
 
-while not end_of_game:
+while end_of_game == False:
+# also could be written as :
+# while not end_of_game:
     guess_letter = input("Guess a letter").lower()
 
     for position in range(len(chosen_word)):
