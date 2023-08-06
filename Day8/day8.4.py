@@ -3,26 +3,44 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-
-def encrypt (plain_text, shift_amount):
-    cipher_text = ""
-    for letter in plain_text:
+def cipher (text_i , shift_i):
+    cipher_text =""
+    for letter in text_i:
         position = alphabet.index(letter)
-        new_position = position+shift_amount
+        if direction == "encode":
+            new_position = position+shift_i
+        elif direction == "decode":
+            new_position = position-shift_i
         new_letter = alphabet[new_position]
-        cipher_text +=new_letter
-    print(f"The encoded message is {cipher_text}")
+        cipher_text += new_letter
+    print(f"the {direction}d message is {cipher_text} " )
 
-def decode (cipher_text, shift_amount):
-    plain_text = ""
-    for letter in cipher_text:
-        position = alphabet.index(letter)
-        new_position = position - shift_amount
-        new_letter = alphabet[new_position]
-        plain_text += new_letter
-    print(f"The decoded message is {plain_text}")
+cipher(text_i=text, shift_i=shift)
 
-if direction == "encode":
-    encrypt(plain_text=text, shift_amount=shift)
-elif direction == "decode":
-    decode(cipher_text=text, shift_amount=shift)
+
+
+
+
+
+# def encrypt (plain_text, shift_amount):
+#     cipher_text = ""
+#     for letter in plain_text:
+#         position = alphabet.index(letter)
+#         new_position = position+shift_amount
+#         new_letter = alphabet[new_position]
+#         cipher_text +=new_letter
+#     print(f"The encoded message is {cipher_text}")
+#
+# def decode (cipher_text, shift_amount):
+#     plain_text = ""
+#     for letter in cipher_text:
+#         position = alphabet.index(letter)
+#         new_position = position - shift_amount
+#         new_letter = alphabet[new_position]
+#         plain_text += new_letter
+#     print(f"The decoded message is {plain_text}")
+#
+# if direction == "encode":
+#     encrypt(plain_text=text, shift_amount=shift)
+# elif direction == "decode":
+#     decode(cipher_text=text, shift_amount=shift)
