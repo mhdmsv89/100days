@@ -3,23 +3,31 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-def cipher (text_i , shift_i):
-    cipher_text =""
-    for letter in text_i:
+# def cipher (text_i , shift_i):
+#     cipher_text =""
+#     for letter in text_i:
+#         position = alphabet.index(letter)
+#         if direction == "encode":
+#             new_position = position+shift_i
+#         elif direction == "decode":
+#             new_position = position-shift_i
+#         new_letter = alphabet[new_position]
+#         cipher_text += new_letter
+#     print(f"the {direction}d message is {cipher_text} " )
+#
+# cipher(text_i=text, shift_i=shift)
+
+def cesar (start_text, shift_amount, cipher_direction):
+    end_text = ""
+    if cipher_direction == "decode":
+        shift_amount *= -1
+    for letter in start_text:
         position = alphabet.index(letter)
-        if direction == "encode":
-            new_position = position+shift_i
-        elif direction == "decode":
-            new_position = position-shift_i
-        new_letter = alphabet[new_position]
-        cipher_text += new_letter
-    print(f"the {direction}d message is {cipher_text} " )
+        new_position = position + shift_amount
+        end_text += alphabet[new_position]
+    print(f"The {cipher_direction}d text is {end_text}")
 
-cipher(text_i=text, shift_i=shift)
-
-
-
-
+cesar(start_text=text, shift_amount=shift, cipher_direction=direction)
 
 
 # def encrypt (plain_text, shift_amount):
