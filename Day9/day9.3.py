@@ -1,3 +1,4 @@
+print("Welcome to Py blind Auction")
 bid = {}
 bidding_finished = False
 
