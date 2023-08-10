@@ -13,11 +13,25 @@ operation = {
     "*":multiply,
     "/":divide
 }
-num_1 = int(input("Enter the first number: "))
-num_2 = int(input("Enter the Second number: "))
-for o in operation:
-    print(o)
-operation_symbol = input("Pick an Operation from the line above")
-calculation_function = operation[operation_symbol]
-answer = calculation_function(num_1,num_2)
-print(f"{num_1} {operation_symbol} {num_2} = {answer}")
+def calculator():
+    num_1 = int(input("Enter the first number: "))
+    for symbol in operation:
+        print(symbol)
+
+    should_continue = True
+    while should_continue:
+
+        operation_symbol = input("Pick an Operation from the above")
+        num_2 = int(input("Enter the next number: "))
+        calculation_function = operation[operation_symbol]
+        answer = calculation_function(num_1,num_2)
+
+        print(f"{num_1} {operation_symbol} {num_2} = {answer}")
+
+        if input(f"Type 'y' to continue with {answer}, or type 'n' to start new calculation.: ") =="y":
+            num_1 = answer
+        else:
+            should_continue = False
+            calculator()
+
+calculator()
