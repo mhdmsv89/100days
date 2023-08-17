@@ -15,6 +15,7 @@ def check_answer(guess, a_follower, b_follower):
 account_b = random.choice(data)
 score = 0
 game_continue = True
+
 while game_continue:
 
     account_a = account_b
@@ -22,12 +23,9 @@ while game_continue:
     if account_a == account_b:
         account_b = random.choice(data)
 
-
-
     print(f"compare a : {format_data(account_a)}.")
     print(f"against b : {format_data(account_b)}.")
     guess = input("Who has more follower ? Type 'A' or 'B' :").lower()
-
 
     a_follower_count = account_a["follower_count"]
     b_follower_count = account_b["follower_count"]
